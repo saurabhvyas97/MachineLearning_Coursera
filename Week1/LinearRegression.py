@@ -82,19 +82,21 @@ def main():
     ##DataGeneration##
     w_actual = 5
     b_actual = -50
-    df = pd.read_csv('Real estate.csv')
-    x_data_raw = df['X3 distance to the nearest MRT station'].to_numpy()
-    y_data = df['Y house price of unit area'].to_numpy()
+    df = pd.read_csv('Fish.csv')
+    x_data_raw = df['Width'].to_numpy()
+    y_data = df['Length1'].to_numpy()
     #x_data_raw = np.linspace(0,108,50)
     e = np.random.rand(len(x_data_raw),) * b_actual
     #y_data = w_actual*x_data_raw + e
     x_data = x_data_raw/np.max(x_data_raw) #scaling
     N = len(y_data)
 
+
+
     ##ParametersForAlgo##
     alpha = 0.1 #learning rate
-    w = -4
-    b = -3000
+    w = 10
+    b = 3
 
     ##StartOfAlgo##
     tic = time.perf_counter()
